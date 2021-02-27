@@ -21,10 +21,16 @@ namespace StringTest
                     Console.WriteLine("Inkorrekt input, skriv in ett positivt tal.");
                 }
             }
-            
-            userName = userName + " " + userPoint;
-            highScores[2] = userName;
 
+            for (int i = 0; i < highScores.Length; i++)
+            {
+                if (highScores[i] == "MARTIN 2000")
+                {
+                    userName = userName + " " + userPoint;
+                    highScores[i] = userName;
+                }
+            }
+            
             for (int i = 0; i < highScores.Length; i++)
             {
                 string scoreMessage = highScores[i].Replace(" ", " har ");
@@ -43,6 +49,7 @@ namespace StringTest
                    }
                 }
             }
+            
             Console.WriteLine("Medelvärdet av poängen är " + result/highScores.Length);
             Console.ReadLine();
         }
